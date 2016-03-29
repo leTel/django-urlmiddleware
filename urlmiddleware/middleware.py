@@ -1,11 +1,14 @@
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.datastructures import SortedDict
+# from django.utils.datastructures import SortedDict # Removed since Django1.9
 from django.utils.functional import memoize
 
 from urlmiddleware.base import MiddlewareResolver404
 from urlmiddleware.urlresolvers import resolve
 
-_match_cache = SortedDict()
+from collections import OrderedDict
+
+# _match_cache = SortedDict()
+_match_cache = OrderedDict()
 
 
 def matched_middleware(path):
