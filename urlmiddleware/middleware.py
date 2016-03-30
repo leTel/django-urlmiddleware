@@ -4,7 +4,7 @@ from django.utils import lru_cache
 from urlmiddleware.base import MiddlewareResolver404
 from urlmiddleware.urlresolvers import resolve
 
-@lru_cache.lru_cache(maxsize=None)
+# @lru_cache.lru_cache(maxsize=None)
 def matched_middleware(path):
     return resolve(path)
 

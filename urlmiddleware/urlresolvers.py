@@ -66,7 +66,7 @@ class MiddlewareRegexURLResolver(RegexURLResolver):
         return list(found)
 
 
-@lru_cache.lru_cache(maxsize=None)
+# @lru_cache.lru_cache(maxsize=None)
 def get_resolver(urlconf):
     if urlconf is None:
         from django.conf import settings
