@@ -1,7 +1,7 @@
 from threading import local
 
 from django.core.exceptions import ImproperlyConfigured
-from django.urls import RegexURLResolver, RegexURLPattern, ResolverMatch
+from django.urls.resolvers import RegexURLResolver, RegexURLPattern, ResolverMatch
 from django.utils.encoding import smart_str
 from django.utils import lru_cache
 
