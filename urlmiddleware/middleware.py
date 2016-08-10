@@ -1,5 +1,6 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import lru_cache
+from django.utils.deprecation import MiddlewareMixin
 
 from urlmiddleware.base import MiddlewareResolver404
 from urlmiddleware.urlresolvers import resolve
@@ -8,7 +9,7 @@ from urlmiddleware.urlresolvers import resolve
 def matched_middleware(path):
     return resolve(path)
 
-class URLMiddleware(object):
+class URLMiddleware(MiddlewareMixin):
     """
     To install urlmiddleware, one global middleware class needs to be
     added so it can then act as an entry point and match other middleware
