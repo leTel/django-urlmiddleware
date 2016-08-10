@@ -10,8 +10,6 @@ def mpatterns(prefix, *args):
     for t in args:
         if isinstance(t, (list, tuple)):
             t = middleware(prefix=prefix, *t)
-        elif isinstance(t, MiddlewareRegexURLPattern):
-            t.add_prefix(prefix)
         pattern_list.append(t)
     return pattern_list
 
